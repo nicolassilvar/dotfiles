@@ -1,0 +1,132 @@
+"SPACING
+set tabstop=4
+set softtabstop=4 " number of spaces in tab when editing
+set shiftwidth=4
+set textwidth=79
+set expandtab "tabs are spaces
+set autoindent
+set fileformat=unix
+
+"SHOW
+set number "show line numbers
+set showcmd "show command in bottom bar
+
+"HIGHLIGHTING
+set showmatch "highlight matching [{()}]
+let python_highlight_all = 1
+set cursorline "highlight current line
+"Enable syntax processing
+syntax enable
+syntax on
+let python_highlight_all=1
+
+"SEARCHING
+set incsearch "searc as character are entered
+set hlsearch "highlight matches
+"Turn off highlighting
+nnoremap <esc><esc> :nohlsearch<CR>
+
+"MOVEMENT
+"move vertically by visual line (skip fake long lines)
+nnoremap j gj
+nnoremap k gk
+"move to Beginning/end of line (for comfort)
+nnoremap B ^
+nnoremap E $
+"split navigation
+set splitbelow
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+"muscle memory
+inoremap <Left> 	<NOP>
+inoremap <Right> 	<NOP>
+inoremap <Up> 		<NOP>
+inoremap <Down> 	<NOP>
+nnoremap <Left> 	<NOP>
+nnoremap <Right> 	<NOP>
+nnoremap <Up> 		<NOP>
+nnoremap <Down> 	<NOP>
+
+"ENABLE FOLDING
+"set foldenable "enable folding
+"set foldmethod=indent "fold based on indent level
+"set foldlevelstart=10 "open most fold by default
+"set foldnestmax=10 "10 nested fold max
+"set foldlevel=99
+"enable folding with the space bar
+"nnoremap <space> za
+
+"SHORTCUTS
+let mapleader=";" "leader is the comma
+"esc change - is too far :)
+inoremap jk <esc>
+inoremap kj <esc>
+
+"UTF-8 SUPPORT
+set encoding=utf-8
+
+"SYSTEM CLIPBOARD
+set clipboard=unnamed
+"set paste
+
+"EXECUTING
+"Execute script within vim with F9
+nnoremap <buffer> <F9> :exec '!clear;python' shellescape(@%,1)<cr>
+"SPELL CHECK
+"setlocal spell
+"set spelllang=en_us
+"inoremap <C-l><c-g>u<Esc>[s1z=`]a<c-g>u
+"From the VIM help
+set history=200
+set ruler
+set showcmd
+set wildmenu
+set list "shows every tab
+set cmdheight=2
+
+"Plugin configurations by Nico
+let g:airline_powerline_fonts = 1
+
+"PLugin for NERDtree
+map <C-n> :NERDTreeToggle<CR>
+
+"Plugin ALE
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:airline#extensions#ale#enabled = 1
+"Plugin Vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vim_quickfix_mode=0
+"Plugin VimLatexPreview
+autocmd Filetype tex setl updatetime=10
+let g:livepreview_previewr='zathura'
+let g:livepreview_cursorhold_recompile=0
+"Plugin Ultisnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+"Plugin Vim-Latex
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin on
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+"filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+"""""""""""""""""""""""""""""""""""""""""""""""""
