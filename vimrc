@@ -24,7 +24,7 @@ set showcmd         "show command in bottom bar
 set cursorline      "show a visual under cursor
 set showmatch       "show matching () []
 set wildmenu        "long menu for tab completitions
-#set wildmode=list:longest,full
+"set wildmode=list:longest,full
 set hidden          "hide buffers w/o saving
 set splitbelow      "open new vertical split bottom
 set splitright      "open new horizontal split right
