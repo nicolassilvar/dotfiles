@@ -1,1 +1,15 @@
-/home/nico/.gitconfig
+[user]
+    name = Nicolas Silva
+	email = nicolas.silva.r@gmail.com
+	name = nicolassilvar
+
+[core]
+    editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space
+    excludesfile = ~/.gitignore
+
+[diff]
+    tool = vimdiff
+
+[credential]
+	helper = cache --timeout=3600

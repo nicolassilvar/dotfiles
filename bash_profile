@@ -1,1 +1,7 @@
-/home/nico/.bash_profile
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+source /home/nico/.config/broot/launcher/bash/br

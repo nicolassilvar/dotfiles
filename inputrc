@@ -1,1 +1,11 @@
-/home/nico/.inputrc
+#editing with vi
+set editing-mode vi
+
+#Ignore case in autocomplete
+set completion-ignore-case on
+
+#List all matches in case multiple
+set show-all-if-ambiguous on
+
+#Flip thru matches shift-tab
+"\e[Z": menu-complete
