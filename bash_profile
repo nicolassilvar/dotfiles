@@ -1,0 +1,1 @@
+/home/nico/.bash_profile
