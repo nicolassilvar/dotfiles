@@ -8,4 +8,5 @@ set completion-ignore-case on
 set show-all-if-ambiguous on
 
 #Flip thru matches shift-tab
-"\e[Z": menu-complete
+#"\e[Z": menu-complete
+
