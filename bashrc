@@ -5,8 +5,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-PS1='[\u@\h \W]\$ '
 
 #ignore the case of tab complete
 set completion-ignore-case on
@@ -20,23 +18,31 @@ set -o vi
 #Alias
 ########################################################
 
+#System
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
 #Pacman 
-pacup="sudo pacman -Syu"
-pain="sudo pacman -S"
+alias pacup="sudo pacman -Syu"
+alias pain="sudo pacman -S"
 
 #Config Triggers
-vimrc="vim ~/.vim/vimrc"
-bashrc="vim ~/.bashrc"
+alias vimrc="vim ~/.vim/vimrc"
+alias bashrc="vim ~/.bashrc"
 
 #Command Line Serch
-histg="history | grep"
+alias histg="history | grep"
 
 #Fix Monitors
-fixS1="xrandr --output eDP-1 --mode 1920x1080" 
-fixS2="xrandr --output HDMI-2 --left-of eDP-1"
+alias fixS1="xrandr --output eDP-1 --mode 1920x1080" 
+alias fixS2="xrandr --output HDMI-2 --left-of eDP-1"
 
 #git
-gs="git status"
-ga="git add"
-gc="git commit"
-gup="git push -u origin master"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gup="git push -u origin master"
+
+#power
+alias pdown="sudo shutdown -h now"
+alias preb="sudo shutdown -r now"
