@@ -97,9 +97,12 @@ set encoding=utf-8
 
 "SYSTEM CLIPBOARD
 """"""""""""""""""""""""""""""""""""""""""""""
-set clipboard=unnamed
+                    "Make all yanking copy to clipboard
+set clipboard=unnamedplus
                     "Map Ctl+c for copy in visual
-map <C-c> "+y<CR>   
+vnoremap <C-c> "+y   
+                    "Map Ctl+p for paste in visual
+vnoremap <C-p> "+p   
 set mouse+=a        "enable mouse support
 set undofile        "mantian undo history
 set undodir=~/.vim/undodir
