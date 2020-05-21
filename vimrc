@@ -14,7 +14,7 @@ set expandtab "tabs are spaces
 set autoindent
 set fileformat=unix
 filetype indent plugin on
-set autoindent 
+set autoindent
 
 "SHOW
 """""""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,8 +38,8 @@ syntax enable
 
 "COLOR
 """""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
-
+colo molokai
+"
 "SEARCHING
 """""""""""""""""""""""""""""""""""""""""""""""""""
 set incsearch "Enable searching as you type
@@ -84,7 +84,7 @@ set backspace=indent,eol,start
 """""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=";"   "leader is the comma
                     "remap esc for convenience
-inoremap jk <esc> 
+inoremap jk <esc>
 inoremap kj <esc>
                     "Execute script within vim with F9
 nnoremap <buffer> <F9> :exec '!clear;python' shellescape(@%,1)<cr>
@@ -100,9 +100,9 @@ set encoding=utf-8
                     "Make all yanking copy to clipboard
 set clipboard=unnamedplus
                     "Map Ctl+c for copy in visual
-vnoremap <C-c> "+y   
+vnoremap <C-c> "+y
                     "Map Ctl+p for paste in visual
-vnoremap <C-p> "+p   
+vnoremap <C-p> "+p
 set mouse+=a        "enable mouse support
 set undofile        "mantian undo history
 set undodir=~/.vim/undodir
@@ -118,8 +118,10 @@ set cmdheight=2
 "***************Plugin configurations by Nico*********************
 
 "Plugin for Airline
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 0
 
 "PLugin for NERDtree
 map <C-n> :NERDTreeToggle<CR>
@@ -138,9 +140,6 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-"Plugin for vim-Rainbow (use Rainbow Load/Toggle for on/off)
-let g:rainbow_active = 1
-
 "Plugin Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -149,3 +148,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
