@@ -70,6 +70,9 @@ alias gup="git push -u origin master"
 alias pdown="sudo shutdown -h now"
 alias preb="sudo shutdown -r now"
 
+#applications
+alias def="/usr/bin/sdcv"
+
 #From Arch
 #https://www.itworld.com/article/2833199/3-ways-to-pimp-your-bash-console.html
 
