@@ -86,8 +86,9 @@ let mapleader=";"   "leader is the comma
                     "remap esc for convenience
 inoremap jk <esc>
 inoremap kj <esc>
-                    "Execute script within vim with F9
-nnoremap <buffer> <F9> :exec '!clear;python' shellescape(@%,1)<cr>
+                    "Execute script within vim with F3
+autocmd FileType python map <buffer> <F3> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F3> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
                     "Turn off highlighting
 nnoremap <esc><esc> :nohlsearch<CR>
 
@@ -124,7 +125,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 
 "PLugin for NERDtree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <F2> :NERDTreeToggle /home/nico/Python<CR>
 
 "Plugin ALE
 let g:ale_fixers = {
